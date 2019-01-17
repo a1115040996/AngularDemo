@@ -1,0 +1,28 @@
+<div class="login-content">
+  <div #header class="m-header">
+    header
+  </div>
+  <div class="m-container" [appHeight]=" containerHeight + 'px' ">
+      <div class="login-wrapper">
+        <div class="left-poster">
+        </div>
+
+        <div class="right-wrapper">
+          <div class="wrapper">
+            <app-input-icon icon="account">
+              <app-input [(model)]="_username"></app-input>
+            </app-input-icon>
+          </div>
+          <div class="wrapper">
+            <app-input-icon icon="password">
+              <app-input [(model)]="_password"></app-input>
+            </app-input-icon>
+          </div>
+          <div class="check-wrapper wrapper">
+            <el-checkbox [model]="true" (modelChange)="handle($event)">记住我</el-checkbox>
+          </div>
+          <div class="login-wrapper" (click)="login()">登录</div>
+        </div>
+      </div>
+  </div>
+</div>
