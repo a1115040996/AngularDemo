@@ -17,6 +17,8 @@ import {CoreModule} from './core/core.module';
 import {LoginModule} from './login/login.module';
 import {InterceptService} from './serve/intercept.service';
 import {HTTP_INTERCEPTORS} from '@angular/common/http';
+import {StoreModule} from '@ngrx/store';
+import {LoginStoreService} from './serve/login.store.service';
 
 
 // 自定义组件
@@ -33,6 +35,9 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
     CoreModule,
     AppRoutingModule,
     LoginModule,
+    StoreModule.forRoot({
+      loginStore: LoginStoreService
+    })
   ],
   providers: [
     // 请求拦截器
